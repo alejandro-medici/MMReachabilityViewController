@@ -12,6 +12,54 @@
 #define MM_DefaultBannerHeight  44.0f
 #define MM_AnimationDuration    0.5f
 
+@interface MMView : UIView
+
+@property (atomic, assign) BOOL animating;
+
+- (id)initWithView:(UIView*)view;
+@end
+
+@implementation MMView
+
+@synthesize animating;
+
+- (id)initWithView:(UIView *)view {
+    
+    self = [super initWithFrame:view.frame];
+    if (self) {
+        
+        self.alpha = view.alpha;
+        self.autoresizesSubviews = view.autoresizesSubviews;
+        self.autoresizingMask = view.autoresizingMask;
+        self.backgroundColor = view.backgroundColor;
+        self.clearsContextBeforeDrawing = view.clearsContextBeforeDrawing;
+        self.clipsToBounds = view.clipsToBounds;
+        self.contentMode = view.contentMode;
+        self.contentScaleFactor = view.contentScaleFactor;
+        self.exclusiveTouch = view.exclusiveTouch;
+        self.hidden = view.hidden;
+        self.multipleTouchEnabled = view.multipleTouchEnabled;
+        self.opaque = view.opaque;
+        self.restorationIdentifier = view.restorationIdentifier;
+        self.tag = view.tag;
+        self.transform = view.transform;
+        self.userInteractionEnabled = view.userInteractionEnabled;
+    }
+    
+    return self;
+}
+
+- (void)setFrame:(CGRect)frame {
+    
+    if (!self.animating && frame.origin.y >= 0) {
+        frame.origin.y = self.frame.origin.y;
+    }
+    
+    [super setFrame:frame];
+}
+
+@end
+
 static Reachability *_reachability = nil;
 UIView *_bannerView = nil;
 BOOL _reachabilityOn;
@@ -62,6 +110,19 @@ static inline Reachability* defaultReachability () {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // replace the view controller view with an MMView
+    MMView *view = [[MMView alloc] initWithView:self.view];
+    NSArray *subviews = [self.view subviews];
+    for (UIView *subview in subviews) {
+        [view addSubview:subview];
+    }
+    
+    [self setView:view];
+    
+#if !__has_feature(objc_arc)
+    [view release];
+#endif
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -131,6 +192,8 @@ static inline Reachability* defaultReachability () {
     
     if (self.view.frame.origin.y == 0) {
         
+        ((MMView*)self.view).animating = TRUE;
+        
         CGRect viewFrame = self.view.frame;
         viewFrame.origin.y += self.bannerView.frame.size.height;
         viewFrame.size.height -= self.bannerView.frame.size.height;
@@ -139,7 +202,7 @@ static inline Reachability* defaultReachability () {
             [self.view setFrame:viewFrame];
             
         } completion:^(BOOL finished) {
-            
+            ((MMView*)self.view).animating = FALSE;
         }];
     }
 }
@@ -147,6 +210,8 @@ static inline Reachability* defaultReachability () {
 - (void)hideBanner {
     
     if (self.view.frame.origin.y > 0) {
+        
+        ((MMView*)self.view).animating = TRUE;
         
         CGRect viewFrame = self.view.frame;
         viewFrame.origin.y -= self.bannerView.frame.size.height;
@@ -156,6 +221,7 @@ static inline Reachability* defaultReachability () {
             [self.view setFrame:viewFrame];
             
         } completion:^(BOOL finished) {
+            ((MMView*)self.view).animating = FALSE;
         }];
     }
 }
