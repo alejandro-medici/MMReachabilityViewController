@@ -51,7 +51,7 @@
 
 - (void)setFrame:(CGRect)frame {
     
-    if (!self.animating && frame.origin.y >= 0) {
+    if (!self.animating && self.frame.origin.y >= 0) {
         frame.origin.y = self.frame.origin.y;
     }
     
@@ -61,7 +61,6 @@
 @end
 
 static Reachability *_reachability = nil;
-UIView *_bannerView = nil;
 BOOL _reachabilityOn;
 
 static inline Reachability* defaultReachability () {
@@ -78,7 +77,6 @@ static inline Reachability* defaultReachability () {
 }
 
 @interface MMReachabilityViewController ()
-@property (nonatomic, readonly) UIView *bannerView;
 
 - (void)startInternetReachability;
 - (void)stopInternerReachability;
@@ -87,24 +85,17 @@ static inline Reachability* defaultReachability () {
 
 @implementation MMReachabilityViewController
 
+@synthesize bannerView = _bannerView;
+
 - (void)dealloc {
     
 #if !__has_feature(objc_arc)
     [super dealloc];
 #endif
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [MMReachabilityViewController cancelPreviousPerformRequestsWithTarget:self selector:@selector(showBanner) object:nil];
     [MMReachabilityViewController cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideBanner) object:nil];
-}
-
-+ (void)setBannerView:(UIView*)bannerView {
-    
-#if !__has_feature(objc_arc)
-    [_bannerView release];
-    [bannerView retain];
-#endif
-    
-    _bannerView = bannerView;
-    _bannerView.autoresizingMask = UIViewAutoresizingNone;
 }
 
 - (void)viewDidLoad
@@ -156,7 +147,7 @@ static inline Reachability* defaultReachability () {
         [noConnectionLabel setTextAlignment:NSTextAlignmentCenter];
         [noConnectionLabel setBaselineAdjustment:UIBaselineAdjustmentAlignCenters];
         [noConnectionLabel setBackgroundColor:[UIColor yellowColor]];
-        [MMReachabilityViewController setBannerView:noConnectionLabel];
+        [self setBannerView:noConnectionLabel];
         
 #if !__has_feature(objc_arc)
         [noConnectionLabel release];
@@ -166,17 +157,27 @@ static inline Reachability* defaultReachability () {
     return _bannerView;
 }
 
+- (void)setBannerView:(UIView*)bannerView {
+    
+#if !__has_feature(objc_arc)
+    [_bannerView release];
+    [bannerView retain];
+#endif
+    
+    _bannerView = bannerView;
+    _bannerView.autoresizingMask = UIViewAutoresizingNone;
+}
+
 #pragma mark - Private methods
 
 - (void)startInternetReachability {
     
     if (!_reachabilityOn) {
-        
         _reachabilityOn = TRUE;
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus) name:kReachabilityChangedNotification object:nil];
         [defaultReachability() startNotifier];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus) name:kReachabilityChangedNotification object:nil];
     
     [self checkNetworkStatus];
 }
