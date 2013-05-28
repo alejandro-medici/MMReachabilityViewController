@@ -108,10 +108,8 @@ static inline Reachability* defaultReachability () {
 #if !__has_feature(objc_arc)
     [super dealloc];
 #endif
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [MMReachabilityViewController cancelPreviousPerformRequestsWithTarget:self selector:@selector(showBanner) object:nil];
-    [MMReachabilityViewController cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideBanner) object:nil];
+
+    [self onDealloc];
 }
 
 - (void)viewDidLoad
@@ -150,6 +148,15 @@ static inline Reachability* defaultReachability () {
 - (void)viewDidDisappear:(BOOL)animated {
     
     [super viewDidDisappear:animated];
+}
+
+#pragma mark - Public interface
+
+- (void)onDealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [MMReachabilityViewController cancelPreviousPerformRequestsWithTarget:self selector:@selector(showBanner) object:nil];
+    [MMReachabilityViewController cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideBanner) object:nil];
 }
 
 #pragma mark - Properties overrides methods

@@ -32,10 +32,10 @@
 
 @property (nonatomic, strong) UIView *bannerView;
 
-- (void)setBannerView:(UIView*)bannerView;
-
-#if __has_feature(objc_arc)
-- (void)dealloc;
-#endif
+/**
+ *  ARC forbids message send 'dealloc' so it's not possible to call [super dealloc] on subclasses, instead you can call onDealloc
+ *  this will tear down all has been setted up (NSNotification observer etc...)
+ */
+- (void)onDealloc;
 
 @end
