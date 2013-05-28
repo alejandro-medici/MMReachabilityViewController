@@ -1,0 +1,349 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D99EB7E51754A77E00E29E83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99EB7E41754A77E00E29E83 /* UIKit.framework */; };
+		D99EB7E71754A77E00E29E83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99EB7E61754A77E00E29E83 /* Foundation.framework */; };
+		D99EB7E91754A77E00E29E83 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99EB7E81754A77E00E29E83 /* CoreGraphics.framework */; };
+		D99EB7EF1754A77E00E29E83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D99EB7ED1754A77E00E29E83 /* InfoPlist.strings */; };
+		D99EB7F11754A77E00E29E83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D99EB7F01754A77E00E29E83 /* main.m */; };
+		D99EB7F51754A77E00E29E83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D99EB7F41754A77E00E29E83 /* AppDelegate.m */; };
+		D99EB7F71754A77E00E29E83 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D99EB7F61754A77E00E29E83 /* Default.png */; };
+		D99EB7F91754A77E00E29E83 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D99EB7F81754A77E00E29E83 /* Default@2x.png */; };
+		D99EB7FB1754A77E00E29E83 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D99EB7FA1754A77E00E29E83 /* Default-568h@2x.png */; };
+		D99EB8041754A7EC00E29E83 /* MMReachabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D99EB8031754A7EC00E29E83 /* MMReachabilityViewController.m */; };
+		D99EB80D1754AEC900E29E83 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D99EB80C1754AEC900E29E83 /* Reachability.m */; };
+		D99EB8161754C48200E29E83 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D99EB8141754C48200E29E83 /* MainViewController.m */; };
+		D99EB8171754C48200E29E83 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99EB8151754C48200E29E83 /* MainViewController.xib */; };
+		D99EB8191754C77200E29E83 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99EB8181754C77200E29E83 /* SystemConfiguration.framework */; };
+		D99EB81D1754CAC800E29E83 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D99EB81B1754CAC700E29E83 /* PushViewController.m */; };
+		D99EB81E1754CAC800E29E83 /* PushViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99EB81C1754CAC700E29E83 /* PushViewController.xib */; };
+		D99EB8221754CFA100E29E83 /* PresentModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D99EB8201754CFA100E29E83 /* PresentModalViewController.m */; };
+		D99EB8231754CFA100E29E83 /* PresentModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99EB8211754CFA100E29E83 /* PresentModalViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D99EB7E11754A77E00E29E83 /* MMReachabilityViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMReachabilityViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D99EB7E41754A77E00E29E83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D99EB7E61754A77E00E29E83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D99EB7E81754A77E00E29E83 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D99EB7EC1754A77E00E29E83 /* MMReachabilityViewController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MMReachabilityViewController-Info.plist"; sourceTree = "<group>"; };
+		D99EB7EE1754A77E00E29E83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D99EB7F01754A77E00E29E83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D99EB7F21754A77E00E29E83 /* MMReachabilityViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MMReachabilityViewController-Prefix.pch"; sourceTree = "<group>"; };
+		D99EB7F31754A77E00E29E83 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D99EB7F41754A77E00E29E83 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D99EB7F61754A77E00E29E83 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D99EB7F81754A77E00E29E83 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D99EB7FA1754A77E00E29E83 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D99EB8021754A7EC00E29E83 /* MMReachabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMReachabilityViewController.h; path = ../../MMReachabilityViewController.h; sourceTree = "<group>"; };
+		D99EB8031754A7EC00E29E83 /* MMReachabilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMReachabilityViewController.m; path = ../../MMReachabilityViewController.m; sourceTree = "<group>"; };
+		D99EB80B1754AEC900E29E83 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		D99EB80C1754AEC900E29E83 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		D99EB8131754C48200E29E83 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		D99EB8141754C48200E29E83 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		D99EB8151754C48200E29E83 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		D99EB8181754C77200E29E83 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D99EB81A1754CAC700E29E83 /* PushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
+		D99EB81B1754CAC700E29E83 /* PushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
+		D99EB81C1754CAC700E29E83 /* PushViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushViewController.xib; sourceTree = "<group>"; };
+		D99EB81F1754CFA100E29E83 /* PresentModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentModalViewController.h; sourceTree = "<group>"; };
+		D99EB8201754CFA100E29E83 /* PresentModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentModalViewController.m; sourceTree = "<group>"; };
+		D99EB8211754CFA100E29E83 /* PresentModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PresentModalViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D99EB7DE1754A77E00E29E83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99EB8191754C77200E29E83 /* SystemConfiguration.framework in Frameworks */,
+				D99EB7E51754A77E00E29E83 /* UIKit.framework in Frameworks */,
+				D99EB7E71754A77E00E29E83 /* Foundation.framework in Frameworks */,
+				D99EB7E91754A77E00E29E83 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D99EB7D81754A77E00E29E83 = {
+			isa = PBXGroup;
+			children = (
+				D99EB7EA1754A77E00E29E83 /* MMReachabilityViewController */,
+				D99EB7E31754A77E00E29E83 /* Frameworks */,
+				D99EB7E21754A77E00E29E83 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D99EB7E21754A77E00E29E83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D99EB7E11754A77E00E29E83 /* MMReachabilityViewController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D99EB7E31754A77E00E29E83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D99EB8181754C77200E29E83 /* SystemConfiguration.framework */,
+				D99EB7E41754A77E00E29E83 /* UIKit.framework */,
+				D99EB7E61754A77E00E29E83 /* Foundation.framework */,
+				D99EB7E81754A77E00E29E83 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D99EB7EA1754A77E00E29E83 /* MMReachabilityViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D99EB7F31754A77E00E29E83 /* AppDelegate.h */,
+				D99EB7F41754A77E00E29E83 /* AppDelegate.m */,
+				D99EB8131754C48200E29E83 /* MainViewController.h */,
+				D99EB8141754C48200E29E83 /* MainViewController.m */,
+				D99EB8151754C48200E29E83 /* MainViewController.xib */,
+				D99EB81A1754CAC700E29E83 /* PushViewController.h */,
+				D99EB81B1754CAC700E29E83 /* PushViewController.m */,
+				D99EB81C1754CAC700E29E83 /* PushViewController.xib */,
+				D99EB81F1754CFA100E29E83 /* PresentModalViewController.h */,
+				D99EB8201754CFA100E29E83 /* PresentModalViewController.m */,
+				D99EB8211754CFA100E29E83 /* PresentModalViewController.xib */,
+				D99EB8011754A7C300E29E83 /* IncludeSources */,
+				D99EB7EB1754A77E00E29E83 /* Supporting Files */,
+			);
+			path = MMReachabilityViewController;
+			sourceTree = "<group>";
+		};
+		D99EB7EB1754A77E00E29E83 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D99EB7EC1754A77E00E29E83 /* MMReachabilityViewController-Info.plist */,
+				D99EB7ED1754A77E00E29E83 /* InfoPlist.strings */,
+				D99EB7F01754A77E00E29E83 /* main.m */,
+				D99EB7F21754A77E00E29E83 /* MMReachabilityViewController-Prefix.pch */,
+				D99EB7F61754A77E00E29E83 /* Default.png */,
+				D99EB7F81754A77E00E29E83 /* Default@2x.png */,
+				D99EB7FA1754A77E00E29E83 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D99EB8011754A7C300E29E83 /* IncludeSources */ = {
+			isa = PBXGroup;
+			children = (
+				D99EB80A1754AEC900E29E83 /* Reachability */,
+				D99EB8021754A7EC00E29E83 /* MMReachabilityViewController.h */,
+				D99EB8031754A7EC00E29E83 /* MMReachabilityViewController.m */,
+			);
+			name = IncludeSources;
+			sourceTree = "<group>";
+		};
+		D99EB80A1754AEC900E29E83 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				D99EB80B1754AEC900E29E83 /* Reachability.h */,
+				D99EB80C1754AEC900E29E83 /* Reachability.m */,
+			);
+			name = Reachability;
+			path = ../../Reachability;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D99EB7E01754A77E00E29E83 /* MMReachabilityViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D99EB7FE1754A77E00E29E83 /* Build configuration list for PBXNativeTarget "MMReachabilityViewController" */;
+			buildPhases = (
+				D99EB7DD1754A77E00E29E83 /* Sources */,
+				D99EB7DE1754A77E00E29E83 /* Frameworks */,
+				D99EB7DF1754A77E00E29E83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MMReachabilityViewController;
+			productName = MMReachabilityViewController;
+			productReference = D99EB7E11754A77E00E29E83 /* MMReachabilityViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D99EB7D91754A77E00E29E83 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Manuele Maggi";
+			};
+			buildConfigurationList = D99EB7DC1754A77E00E29E83 /* Build configuration list for PBXProject "MMReachabilityViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D99EB7D81754A77E00E29E83;
+			productRefGroup = D99EB7E21754A77E00E29E83 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D99EB7E01754A77E00E29E83 /* MMReachabilityViewController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D99EB7DF1754A77E00E29E83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99EB7EF1754A77E00E29E83 /* InfoPlist.strings in Resources */,
+				D99EB7F71754A77E00E29E83 /* Default.png in Resources */,
+				D99EB7F91754A77E00E29E83 /* Default@2x.png in Resources */,
+				D99EB7FB1754A77E00E29E83 /* Default-568h@2x.png in Resources */,
+				D99EB8171754C48200E29E83 /* MainViewController.xib in Resources */,
+				D99EB81E1754CAC800E29E83 /* PushViewController.xib in Resources */,
+				D99EB8231754CFA100E29E83 /* PresentModalViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D99EB7DD1754A77E00E29E83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99EB7F11754A77E00E29E83 /* main.m in Sources */,
+				D99EB7F51754A77E00E29E83 /* AppDelegate.m in Sources */,
+				D99EB8041754A7EC00E29E83 /* MMReachabilityViewController.m in Sources */,
+				D99EB80D1754AEC900E29E83 /* Reachability.m in Sources */,
+				D99EB8161754C48200E29E83 /* MainViewController.m in Sources */,
+				D99EB81D1754CAC800E29E83 /* PushViewController.m in Sources */,
+				D99EB8221754CFA100E29E83 /* PresentModalViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D99EB7ED1754A77E00E29E83 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D99EB7EE1754A77E00E29E83 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D99EB7FC1754A77E00E29E83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D99EB7FD1754A77E00E29E83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D99EB7FF1754A77E00E29E83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MMReachabilityViewController/MMReachabilityViewController-Prefix.pch";
+				INFOPLIST_FILE = "MMReachabilityViewController/MMReachabilityViewController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D99EB8001754A77E00E29E83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MMReachabilityViewController/MMReachabilityViewController-Prefix.pch";
+				INFOPLIST_FILE = "MMReachabilityViewController/MMReachabilityViewController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D99EB7DC1754A77E00E29E83 /* Build configuration list for PBXProject "MMReachabilityViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D99EB7FC1754A77E00E29E83 /* Debug */,
+				D99EB7FD1754A77E00E29E83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D99EB7FE1754A77E00E29E83 /* Build configuration list for PBXNativeTarget "MMReachabilityViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D99EB7FF1754A77E00E29E83 /* Debug */,
+				D99EB8001754A77E00E29E83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D99EB7D91754A77E00E29E83 /* Project object */;
+}
