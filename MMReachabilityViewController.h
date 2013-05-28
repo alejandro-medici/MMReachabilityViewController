@@ -24,7 +24,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMReachabilityViewController : UIViewController
+@interface MMReachabilityViewController : UIViewController {
+    
+    @protected
+    UIView *_bannerView;
+}
 
 @property (nonatomic, strong) UIView *bannerView;
 
