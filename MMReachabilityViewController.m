@@ -106,6 +106,7 @@ static inline Reachability* defaultReachability () {
 
 @synthesize bannerView = _bannerView;
 @synthesize mode = _mode;
+@synthesize visibilityTime;
 
 - (void)dealloc {
     
@@ -194,8 +195,7 @@ static inline Reachability* defaultReachability () {
 - (void)onDealloc {
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [MMReachabilityViewController cancelPreviousPerformRequestsWithTarget:self selector:@selector(showBanner) object:nil];
-    [MMReachabilityViewController cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideBanner) object:nil];
+    [self cancel];
 }
 
 #pragma mark - Properties overrides methods
@@ -312,6 +312,11 @@ static inline Reachability* defaultReachability () {
                          if (self.mode == MMReachabilityModeResize) {
                              ((MMView*)self.view).animating = FALSE;
                          }
+                         
+                         if (self.visibilityTime > 0) {
+                             [self cancel];
+                             [self performSelector:@selector(hideBanner) withObject:nil afterDelay:self.visibilityTime];
+                         }
                      }];
 }
 
@@ -376,8 +381,7 @@ static inline Reachability* defaultReachability () {
             
         case NotReachable: {
             
-            [MMReachabilityViewController cancelPreviousPerformRequestsWithTarget:self selector:@selector(showBanner) object:nil];
-            [MMReachabilityViewController cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideBanner) object:nil];
+            [self cancel];
             [self performSelector:@selector(showBanner) withObject:nil afterDelay:0.1]; // performed with a small delay to avoid multiple notification causing stange jumping
             break;
         }
@@ -385,8 +389,7 @@ static inline Reachability* defaultReachability () {
         case ReachableViaWiFi:
         case ReachableViaWWAN: {
             
-            [MMReachabilityViewController cancelPreviousPerformRequestsWithTarget:self selector:@selector(showBanner) object:nil];
-            [MMReachabilityViewController cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideBanner) object:nil];
+            [self cancel];
             [self performSelector:@selector(hideBanner) withObject:nil afterDelay:0.1]; // performed with a small delay to avoid multiple notification causing stange jumping
             break;
         }
@@ -394,6 +397,12 @@ static inline Reachability* defaultReachability () {
         default:
             break;
     }
+}
+
+- (void)cancel {
+    
+    [MMReachabilityViewController cancelPreviousPerformRequestsWithTarget:self selector:@selector(showBanner) object:nil];
+    [MMReachabilityViewController cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideBanner) object:nil];
 }
 
 @end

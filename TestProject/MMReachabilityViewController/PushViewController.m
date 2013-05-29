@@ -35,6 +35,7 @@
     
     PushViewController *reachabilityVC = [[[PushViewController alloc] initWithNibName:@"PushViewController" bundle:nil] autorelease];
     reachabilityVC.mode = MMReachabilityModeOverlay;
+    reachabilityVC.visibilityTime = 3.0;
     [self.navigationController pushViewController:reachabilityVC animated:YES];
 }
 
