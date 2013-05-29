@@ -99,9 +99,13 @@ static inline Reachability* defaultReachability () {
 - (void)checkNetworkStatus;
 @end
 
-@implementation MMReachabilityViewController
+@implementation MMReachabilityViewController {
+    
+    BOOL _loaded;
+}
 
 @synthesize bannerView = _bannerView;
+@synthesize mode = _mode;
 
 - (void)dealloc {
     
@@ -116,26 +120,61 @@ static inline Reachability* defaultReachability () {
 {
     [super viewDidLoad];
     
-    // replace the view controller view with an MMView
-    MMView *view = [[MMView alloc] initWithView:self.view];
-    NSArray *subviews = [self.view subviews];
-    for (UIView *subview in subviews) {
-        [view addSubview:subview];
+    _loaded = TRUE;
+    
+    switch (self.mode) {
+            
+        case MMReachabilityModeOverlay:
+        {
+            CGRect bannerFrame = self.bannerView.frame;
+            bannerFrame.origin.y = -self.bannerView.frame.size.height;
+            [self.bannerView setFrame:bannerFrame];
+            break;
+        }
+            
+        default:
+        case MMReachabilityModeResize:
+        {
+            // replace the view controller view with an MMView
+            MMView *view = [[MMView alloc] initWithView:self.view];
+            NSArray *subviews = [self.view subviews];
+            for (UIView *subview in subviews) {
+                [view addSubview:subview];
+            }
+            
+            [self setView:view];
+            
+#if !__has_feature(objc_arc)
+            [view release];
+#endif
+            break;
+        }
     }
     
-    [self setView:view];
-    
-#if !__has_feature(objc_arc)
-    [view release];
-#endif
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
     
-    [self.view.superview addSubview:self.bannerView];
-    [self.view.superview sendSubviewToBack:self.bannerView];
+    if (self.bannerView.superview == nil) {
+        
+        switch (self.mode) {
+                
+            case MMReachabilityModeOverlay:
+            {
+                [self.view addSubview:self.bannerView];
+                [self.view bringSubviewToFront:self.bannerView];
+                break;
+            }
+            default:
+            case MMReachabilityModeResize:
+                [self.view.superview addSubview:self.bannerView];
+                [self.view.superview sendSubviewToBack:self.bannerView];
+                break;
+        }
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -191,6 +230,13 @@ static inline Reachability* defaultReachability () {
     _bannerView.autoresizingMask = UIViewAutoresizingNone;
 }
 
+- (void)setMode:(MMReachabilityMode)mode {
+    
+    if (!_loaded) {
+        _mode = mode;
+    }
+}
+
 #pragma mark - Private methods
 
 - (void)startInternetReachability {
@@ -214,40 +260,111 @@ static inline Reachability* defaultReachability () {
 
 - (void)showBanner {
     
-    if (self.view.frame.origin.y == 0) {
-        
-        ((MMView*)self.view).animating = TRUE;
-        
-        CGRect viewFrame = self.view.frame;
-        viewFrame.origin.y += self.bannerView.frame.size.height;
-        viewFrame.size.height -= self.bannerView.frame.size.height;
-        
-        [UIView animateWithDuration:MM_AnimationDuration delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-            [self.view setFrame:viewFrame];
+    CGRect viewFrame;
+    UIView *view = nil;
+    
+    switch (self.mode) {
             
-        } completion:^(BOOL finished) {
-            ((MMView*)self.view).animating = FALSE;
-        }];
+        default:
+        case MMReachabilityModeResize:
+        {
+            view = self.view;
+            if (view.frame.origin.y == 0) {
+                
+                ((MMView*)view).animating = TRUE;
+                
+                viewFrame = self.view.frame;
+                viewFrame.origin.y += self.bannerView.frame.size.height;
+                viewFrame.size.height -= self.bannerView.frame.size.height;
+            }
+            else
+                return;
+            break;
+        }
+            
+        case MMReachabilityModeOverlay:
+        {
+            view = self.bannerView;
+
+            if (view.frame.origin.y == -view.frame.size.height) {
+                
+                viewFrame = view.frame;
+                viewFrame.origin.y += view.frame.size.height;
+                
+                [self.view bringSubviewToFront:view];
+            }
+            else
+                return;
+            break;
+        }
     }
+    
+    [UIView animateWithDuration:MM_AnimationDuration
+                          delay:0.0
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         
+                         [view setFrame:viewFrame];
+                     }
+                     completion:^(BOOL finished) {
+                         
+                         if (self.mode == MMReachabilityModeResize) {
+                             ((MMView*)self.view).animating = FALSE;
+                         }
+                     }];
 }
 
 - (void)hideBanner {
     
-    if (self.view.frame.origin.y > 0) {
-        
-        ((MMView*)self.view).animating = TRUE;
-        
-        CGRect viewFrame = self.view.frame;
-        viewFrame.origin.y -= self.bannerView.frame.size.height;
-        viewFrame.size.height += self.bannerView.frame.size.height;
-        
-        [UIView animateWithDuration:MM_AnimationDuration delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-            [self.view setFrame:viewFrame];
+    CGRect viewFrame;
+    UIView *view = nil;
+    
+    switch (self.mode) {
             
-        } completion:^(BOOL finished) {
-            ((MMView*)self.view).animating = FALSE;
-        }];
+        default:
+        case MMReachabilityModeResize:
+        {
+            view = self.view;
+            if (view.frame.origin.y > 0) {
+                
+                ((MMView*)view).animating = TRUE;
+                viewFrame = self.view.frame;
+                viewFrame.origin.y -= self.bannerView.frame.size.height;
+                viewFrame.size.height += self.bannerView.frame.size.height;
+            }
+            else
+                return;
+            break;
+        }
+            
+        case MMReachabilityModeOverlay:
+        {
+            view = self.bannerView;
+            if (view.frame.origin.y > -view.frame.size.height) {
+                
+                viewFrame = self.bannerView.frame;
+                viewFrame.origin.y = -view.frame.size.height;
+            }
+            else
+                return;
+            break;
+        }
     }
+    
+    [UIView animateWithDuration:MM_AnimationDuration
+                          delay:0.0
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         
+                         [view setFrame:viewFrame];
+                     }
+                     completion:^(BOOL finished) {
+                         
+                         if (self.mode == MMReachabilityModeResize) {
+                             ((MMView*)self.view).animating = FALSE;
+                         }
+                     }];
+
 }
 
 - (void)checkNetworkStatus {

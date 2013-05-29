@@ -34,6 +34,7 @@
 - (IBAction)pushButtonPressed:(id)sender {
     
     PushViewController *reachabilityVC = [[[PushViewController alloc] initWithNibName:@"PushViewController" bundle:nil] autorelease];
+    reachabilityVC.mode = MMReachabilityModeOverlay;
     [self.navigationController pushViewController:reachabilityVC animated:YES];
 }
 

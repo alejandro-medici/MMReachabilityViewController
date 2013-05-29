@@ -21,6 +21,12 @@
 //  limitations under the License.
 //
 
+typedef enum {
+    
+    MMReachabilityModeResize,
+    MMReachabilityModeOverlay,
+    
+} MMReachabilityMode;
 
 #import <UIKit/UIKit.h>
 
@@ -31,6 +37,7 @@
 }
 
 @property (nonatomic, strong) UIView *bannerView;
+@property (nonatomic, assign) MMReachabilityMode mode;
 
 /**
  *  ARC forbids message send 'dealloc' so it's not possible to call [super dealloc] on subclasses, instead you can call onDealloc
