@@ -123,6 +123,8 @@ static inline Reachability* defaultReachability () {
     
     _loaded = TRUE;
     
+    [self.bannerView setHidden:YES];
+
     switch (self.mode) {
             
         case MMReachabilityModeOverlay:
@@ -300,6 +302,8 @@ static inline Reachability* defaultReachability () {
         }
     }
     
+    [self.bannerView setHidden:NO];
+    
     [UIView animateWithDuration:MM_AnimationDuration
                           delay:0.0
                         options:UIViewAnimationOptionBeginFromCurrentState
@@ -366,6 +370,8 @@ static inline Reachability* defaultReachability () {
                      }
                      completion:^(BOOL finished) {
                          
+                         [self.bannerView setHidden:YES];
+
                          if (self.mode == MMReachabilityModeResize) {
                              ((MMView*)self.view).animating = FALSE;
                          }
