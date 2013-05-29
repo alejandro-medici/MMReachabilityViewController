@@ -205,6 +205,7 @@ static inline Reachability* defaultReachability () {
     if (!_bannerView) {
         
         UILabel *noConnectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, 0.0, self.view.frame.size.width, MM_DefaultBannerHeight)];
+        [noConnectionLabel setFont:[UIFont boldSystemFontOfSize:16]];
         [noConnectionLabel setText:@"No internet connection!"];
         [noConnectionLabel setTextAlignment:NSTextAlignmentCenter];
         [noConnectionLabel setBaselineAdjustment:UIBaselineAdjustmentAlignCenters];
