@@ -178,6 +178,12 @@ static inline Reachability* defaultReachability () {
                 break;
         }
     }
+    
+    //  the banner view is added after the viewDidLoad
+    //  so we need to adjust the width in case of rotated interface
+    CGRect bannerFrame = self.bannerView.frame;
+    bannerFrame.size.width = self.view.frame.size.width;
+    [self.bannerView setFrame:bannerFrame];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -212,6 +218,7 @@ static inline Reachability* defaultReachability () {
         [noConnectionLabel setTextAlignment:NSTextAlignmentCenter];
         [noConnectionLabel setBaselineAdjustment:UIBaselineAdjustmentAlignCenters];
         [noConnectionLabel setBackgroundColor:[UIColor yellowColor]];
+        [noConnectionLabel setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
         [self setBannerView:noConnectionLabel];
         
 #if !__has_feature(objc_arc)
@@ -230,7 +237,6 @@ static inline Reachability* defaultReachability () {
 #endif
     
     _bannerView = bannerView;
-    _bannerView.autoresizingMask = UIViewAutoresizingNone;
 }
 
 - (void)setMode:(MMReachabilityMode)mode {
