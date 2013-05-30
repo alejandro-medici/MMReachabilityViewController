@@ -23,8 +23,8 @@
 
 typedef enum {
     
-    MMReachabilityModeResize,
     MMReachabilityModeOverlay,
+    MMReachabilityModeResize,
     
 } MMReachabilityMode;
 

@@ -127,6 +127,7 @@ static inline Reachability* defaultReachability () {
 
     switch (self.mode) {
             
+        default:
         case MMReachabilityModeOverlay:
         {
             CGRect bannerFrame = self.bannerView.frame;
@@ -135,7 +136,6 @@ static inline Reachability* defaultReachability () {
             break;
         }
             
-        default:
         case MMReachabilityModeResize:
         {
             // replace the view controller view with an MMView
@@ -165,13 +165,14 @@ static inline Reachability* defaultReachability () {
         
         switch (self.mode) {
                 
+            default:
             case MMReachabilityModeOverlay:
             {
                 [self.view addSubview:self.bannerView];
                 [self.view bringSubviewToFront:self.bannerView];
                 break;
             }
-            default:
+            
             case MMReachabilityModeResize:
                 [self.view.superview addSubview:self.bannerView];
                 [self.view.superview sendSubviewToBack:self.bannerView];
@@ -276,7 +277,6 @@ static inline Reachability* defaultReachability () {
     
     switch (self.mode) {
             
-        default:
         case MMReachabilityModeResize:
         {
             view = self.view;
@@ -293,6 +293,7 @@ static inline Reachability* defaultReachability () {
             break;
         }
             
+        default:
         case MMReachabilityModeOverlay:
         {
             view = self.bannerView;
@@ -339,7 +340,6 @@ static inline Reachability* defaultReachability () {
     
     switch (self.mode) {
             
-        default:
         case MMReachabilityModeResize:
         {
             view = self.view;
@@ -354,7 +354,8 @@ static inline Reachability* defaultReachability () {
                 return;
             break;
         }
-            
+          
+        default:
         case MMReachabilityModeOverlay:
         {
             view = self.bannerView;
