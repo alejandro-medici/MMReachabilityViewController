@@ -271,8 +271,8 @@ static inline Reachability* defaultReachability () {
 
 - (void)showBanner {
     
-    CGRect viewFrame;
-    UIView *view = nil;
+    __block CGRect viewFrame;
+    __block UIView *view = nil;
     
     switch (self.mode) {
             
@@ -334,8 +334,8 @@ static inline Reachability* defaultReachability () {
 
 - (void)hideBanner {
     
-    CGRect viewFrame;
-    UIView *view = nil;
+    __block CGRect viewFrame;
+    __block UIView *view = nil;
     
     switch (self.mode) {
             

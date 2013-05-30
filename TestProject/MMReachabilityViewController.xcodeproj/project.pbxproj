@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		658A892817576A26006E6924 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658A892717576A26006E6924 /* QuartzCore.framework */; };
+		658A893617579180006E6924 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658A89341757917E006E6924 /* ExampleViewController.m */; };
+		658A893717579180006E6924 /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658A89351757917F006E6924 /* ExampleViewController.xib */; };
+		658A89391757A3A7006E6924 /* photo.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 658A89381757A3A6006E6924 /* photo.JPG */; };
+		658A893B1757A4CE006E6924 /* photo@2x.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 658A893A1757A4CD006E6924 /* photo@2x.JPG */; };
 		D99EB7E51754A77E00E29E83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99EB7E41754A77E00E29E83 /* UIKit.framework */; };
 		D99EB7E71754A77E00E29E83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99EB7E61754A77E00E29E83 /* Foundation.framework */; };
 		D99EB7E91754A77E00E29E83 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99EB7E81754A77E00E29E83 /* CoreGraphics.framework */; };
@@ -21,13 +26,15 @@
 		D99EB8161754C48200E29E83 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D99EB8141754C48200E29E83 /* MainViewController.m */; };
 		D99EB8171754C48200E29E83 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99EB8151754C48200E29E83 /* MainViewController.xib */; };
 		D99EB8191754C77200E29E83 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99EB8181754C77200E29E83 /* SystemConfiguration.framework */; };
-		D99EB81D1754CAC800E29E83 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D99EB81B1754CAC700E29E83 /* PushViewController.m */; };
-		D99EB81E1754CAC800E29E83 /* PushViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99EB81C1754CAC700E29E83 /* PushViewController.xib */; };
-		D99EB8221754CFA100E29E83 /* PresentModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D99EB8201754CFA100E29E83 /* PresentModalViewController.m */; };
-		D99EB8231754CFA100E29E83 /* PresentModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99EB8211754CFA100E29E83 /* PresentModalViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		658A892717576A26006E6924 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		658A89331757917D006E6924 /* ExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleViewController.h; sourceTree = "<group>"; };
+		658A89341757917E006E6924 /* ExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleViewController.m; sourceTree = "<group>"; };
+		658A89351757917F006E6924 /* ExampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleViewController.xib; sourceTree = "<group>"; };
+		658A89381757A3A6006E6924 /* photo.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo.JPG; sourceTree = "<group>"; };
+		658A893A1757A4CD006E6924 /* photo@2x.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "photo@2x.JPG"; sourceTree = "<group>"; };
 		D99EB7E11754A77E00E29E83 /* MMReachabilityViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMReachabilityViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D99EB7E41754A77E00E29E83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D99EB7E61754A77E00E29E83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,12 +56,6 @@
 		D99EB8141754C48200E29E83 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		D99EB8151754C48200E29E83 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		D99EB8181754C77200E29E83 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D99EB81A1754CAC700E29E83 /* PushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
-		D99EB81B1754CAC700E29E83 /* PushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
-		D99EB81C1754CAC700E29E83 /* PushViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushViewController.xib; sourceTree = "<group>"; };
-		D99EB81F1754CFA100E29E83 /* PresentModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentModalViewController.h; sourceTree = "<group>"; };
-		D99EB8201754CFA100E29E83 /* PresentModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentModalViewController.m; sourceTree = "<group>"; };
-		D99EB8211754CFA100E29E83 /* PresentModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PresentModalViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658A892817576A26006E6924 /* QuartzCore.framework in Frameworks */,
 				D99EB8191754C77200E29E83 /* SystemConfiguration.framework in Frameworks */,
 				D99EB7E51754A77E00E29E83 /* UIKit.framework in Frameworks */,
 				D99EB7E71754A77E00E29E83 /* Foundation.framework in Frameworks */,
@@ -75,6 +77,7 @@
 		D99EB7D81754A77E00E29E83 = {
 			isa = PBXGroup;
 			children = (
+				658A892717576A26006E6924 /* QuartzCore.framework */,
 				D99EB7EA1754A77E00E29E83 /* MMReachabilityViewController */,
 				D99EB7E31754A77E00E29E83 /* Frameworks */,
 				D99EB7E21754A77E00E29E83 /* Products */,
@@ -103,17 +106,16 @@
 		D99EB7EA1754A77E00E29E83 /* MMReachabilityViewController */ = {
 			isa = PBXGroup;
 			children = (
+				658A893A1757A4CD006E6924 /* photo@2x.JPG */,
+				658A89381757A3A6006E6924 /* photo.JPG */,
 				D99EB7F31754A77E00E29E83 /* AppDelegate.h */,
 				D99EB7F41754A77E00E29E83 /* AppDelegate.m */,
 				D99EB8131754C48200E29E83 /* MainViewController.h */,
 				D99EB8141754C48200E29E83 /* MainViewController.m */,
 				D99EB8151754C48200E29E83 /* MainViewController.xib */,
-				D99EB81A1754CAC700E29E83 /* PushViewController.h */,
-				D99EB81B1754CAC700E29E83 /* PushViewController.m */,
-				D99EB81C1754CAC700E29E83 /* PushViewController.xib */,
-				D99EB81F1754CFA100E29E83 /* PresentModalViewController.h */,
-				D99EB8201754CFA100E29E83 /* PresentModalViewController.m */,
-				D99EB8211754CFA100E29E83 /* PresentModalViewController.xib */,
+				658A89331757917D006E6924 /* ExampleViewController.h */,
+				658A89341757917E006E6924 /* ExampleViewController.m */,
+				658A89351757917F006E6924 /* ExampleViewController.xib */,
 				D99EB8011754A7C300E29E83 /* IncludeSources */,
 				D99EB7EB1754A77E00E29E83 /* Supporting Files */,
 			);
@@ -210,8 +212,9 @@
 				D99EB7F91754A77E00E29E83 /* Default@2x.png in Resources */,
 				D99EB7FB1754A77E00E29E83 /* Default-568h@2x.png in Resources */,
 				D99EB8171754C48200E29E83 /* MainViewController.xib in Resources */,
-				D99EB81E1754CAC800E29E83 /* PushViewController.xib in Resources */,
-				D99EB8231754CFA100E29E83 /* PresentModalViewController.xib in Resources */,
+				658A893717579180006E6924 /* ExampleViewController.xib in Resources */,
+				658A89391757A3A7006E6924 /* photo.JPG in Resources */,
+				658A893B1757A4CE006E6924 /* photo@2x.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,8 +230,7 @@
 				D99EB8041754A7EC00E29E83 /* MMReachabilityViewController.m in Sources */,
 				D99EB80D1754AEC900E29E83 /* Reachability.m in Sources */,
 				D99EB8161754C48200E29E83 /* MainViewController.m in Sources */,
-				D99EB81D1754CAC800E29E83 /* PushViewController.m in Sources */,
-				D99EB8221754CFA100E29E83 /* PresentModalViewController.m in Sources */,
+				658A893617579180006E6924 /* ExampleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

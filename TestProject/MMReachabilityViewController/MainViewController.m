@@ -23,9 +23,7 @@
 
 
 #import "MainViewController.h"
-#import "MMReachabilityViewController.h"
-#import "PushViewController.h"
-#import "PresentModalViewController.h"
+#import "ExampleViewController.h"
 
 @interface MainViewController ()
 
@@ -33,15 +31,26 @@
 
 @implementation MainViewController
 
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    self.title = @"MMReachabilityViewController";
+}
+
 - (IBAction)pushButtonPressed:(id)sender {
     
-    PushViewController *reachabilityVC = [[[PushViewController alloc] initWithNibName:@"PushViewController" bundle:nil] autorelease];
+    ExampleViewController *reachabilityVC = [[[ExampleViewController alloc] initWithNibName:@"ExampleViewController" bundle:nil] autorelease];
+    reachabilityVC.mode = MMReachabilityModeOverlay;
+    reachabilityVC.visibilityTime = 3.0;
     [self.navigationController pushViewController:reachabilityVC animated:YES];
 }
 
 - (IBAction)presentModalButtonPressed:(id)sender {
     
-    PresentModalViewController *reachabilityVC = [[[PresentModalViewController alloc] initWithNibName:@"PresentModalViewController" bundle:nil] autorelease];
+    ExampleViewController *reachabilityVC = [[[ExampleViewController alloc] initWithNibName:@"ExampleViewController" bundle:nil] autorelease];
+    reachabilityVC.mode = MMReachabilityModeResize;
+    reachabilityVC.visibilityTime = 3.0;
     UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:reachabilityVC] autorelease];
     [self.navigationController presentViewController:navController animated:YES completion:NULL];
 }
