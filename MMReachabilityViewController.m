@@ -25,7 +25,7 @@
 #import "MMReachabilityViewController.h"
 #import "Reachability.h"
 
-#define MM_DefaultBannerHeight  44.0f
+#define MM_DefaultBannerHeight  36.0f
 #define MM_AnimationDuration    0.5f
 
 @interface MMView : UIView
@@ -110,11 +110,11 @@ static inline Reachability* defaultReachability () {
 
 - (void)dealloc {
     
+    [self onDealloc];
+    
 #if !__has_feature(objc_arc)
     [super dealloc];
 #endif
-
-    [self onDealloc];
 }
 
 - (void)viewDidLoad
@@ -213,11 +213,13 @@ static inline Reachability* defaultReachability () {
     if (!_bannerView) {
         
         UILabel *noConnectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, 0.0, self.view.frame.size.width, MM_DefaultBannerHeight)];
-        [noConnectionLabel setFont:[UIFont boldSystemFontOfSize:16]];
+        [noConnectionLabel setFont:[UIFont boldSystemFontOfSize:14]];
+        [noConnectionLabel setTextColor:[UIColor whiteColor]];
+        [noConnectionLabel setShadowColor:[UIColor blackColor]];
         [noConnectionLabel setText:@"No internet connection!"];
         [noConnectionLabel setTextAlignment:NSTextAlignmentCenter];
         [noConnectionLabel setBaselineAdjustment:UIBaselineAdjustmentAlignCenters];
-        [noConnectionLabel setBackgroundColor:[UIColor yellowColor]];
+        [noConnectionLabel setBackgroundColor:[UIColor redColor]];
         [noConnectionLabel setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
         [self setBannerView:noConnectionLabel];
         
