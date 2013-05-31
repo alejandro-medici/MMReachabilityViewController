@@ -3,15 +3,15 @@ MMReachabilityViewController
 
 A UIViewController subclass that using the apple reachability show a 'missing internet connection' content automatically adjusting the content or overlaying the view owned by the controller
 
-DEPENDENCIES:
+**DEPENDENCIES:**
 
 The only external source that you need to compile "MMReachabilityViewController" is the Apple Reachability, the recommended version is V 2.2 provided in this repo.
 
-INSTALL:
+**INSTALL:**
 
 Import MMReachabilityViewController (.h .m) in your project and the Apple Reachability if not yet imported.
 
-HOW TO USE:
+**HOW TO USE:**
 
 1.	Create your view controllers as subclass of MMReachabilityViewController. 
 
@@ -58,7 +58,7 @@ HOW TO USE:
 		
 	as usual on not ARC projects.
 	
-CUSTOMISE THE BANNER VIEW:
+**CUSTOMISE THE BANNER VIEW:**
 
 You can customise the bannerView in this way:
 
