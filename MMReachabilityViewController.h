@@ -23,8 +23,8 @@
 
 typedef enum {
     
-    MMReachabilityModeOverlay,
-    MMReachabilityModeResize,
+    MMReachabilityModeOverlay,  //  The banner view overlay the content of the view of the viewcontroller
+    MMReachabilityModeResize,   //  The banner banner appear at the topo of the view container and resize the view of the viewcontroller
     
 } MMReachabilityMode;
 
